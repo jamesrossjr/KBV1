@@ -1,52 +1,78 @@
-<template>
-    <div class="newspaper h-screen bg-black/80 p-8">
-      <h1 class="font-serif text-4xl font-bold mb-4">
-        Exploring the Hidden Gems of Rome
-      </h1>
-      <p class="font-serif text-lg mb-6">
-        Discover the lesser-known but equally fascinating corners of Rome, away from the bustling tourist spots.
-      </p>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="space-y-4">
-          <p class="font-serif">
-            While the Colosseum and Vatican City draw millions of visitors, Rome's true charm often lies hidden in plain sight. This article explores these hidden treasures, from quaint alleyways to gourmet local eateries.
-          </p>
-          <p class="font-serif">
-            One such spot is the quiet neighborhood of Trastevere, where the pace slows and the aroma of traditional Roman cuisine fills the air.
-          </p>
-        </div>
-        <div class="space-y-4">
-          <p class="font-serif">
-            For history enthusiasts, the Appian Way offers a journey back in time with its ancient road and ruins scattered along the path. It's a perfect blend of history and nature.
-          </p>
-          <p class="font-serif">
-            As we delve deeper into Rome's layers, each step tells a story, offering a unique perspective on the Eternal City.
-          </p>
-        </div>
-      </div>
-      <!-- Additional Articles -->
-      <h2 class="font-serif text-3xl font-bold mt-12 mb-4">
-        The Cultural Tapestry of Istanbul
-      </h2>
-      <p class="font-serif text-lg">
-        Istanbul: a city where continents collide, and history and modernity live side by side. This article explores the rich cultural landscape of this unique metropolis.
-      </p>
-      <h2 class="font-serif text-3xl font-bold mt-12 mb-4">
-        A Historical Journey Through the Castles of Scotland
-      </h2>
-      <p class="font-serif text-lg">
-        Scotland's castles are not just remnants of the past but are storied structures that offer a glimpse into the turbulent yet fascinating history of the region.
-      </p>
-    </div>
-  </template>
-  
-  <style scoped>
-    .newspaper {
-      font-family: 'Times New Roman', serif;
-      width: 800px;
-      margin: auto;
-      background-color: white;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+<script>
+export default {
+    data() {
+  return {
+    posts: [
+      { id: 1, title: 'Discovering Hidden Gems in Rome', content: 'Explore the lesser-known attractions and secret spots in Rome.' },
+      { id: 2, title: 'The Art of Coffee Making', content: 'Dive into the world of coffee brewing.' },
+      { id: 3, title: 'Tech Innovations in 2023', content: 'A look at the latest technological advances.' },
+      { id: 4, title: 'Sustainable Living Tips', content: 'Learn eco-friendly lifestyle tips.' },
+      { id: 5, title: 'Guide to Freelancing', content: 'Everything to start your freelancing career.' },
+      { id: 6, title: 'Meditation and Mindfulness', content: 'Improving mental health through meditation.' },
+      { id: 7, title: 'The Future of Remote Work', content: 'Insights into remote work.' },
+      { id: 8, title: 'Fitness Routines to Try at Home', content: 'Effective routines with minimal equipment.' },
+      { id: 9, title: 'Budget Travel Destinations', content: 'Top travel destinations on a budget.' },
+      { id: 10, title: 'Best DIY Home Decor Ideas', content: 'DIY decor ideas to refresh your space.' }
+    ]
+  };
+},
+
+  methods: {
+    // Simulates the loading of more posts
+    loadMorePosts() {
+      let newPosts = [];
+      for (let i = 0; i < 5; i++) {
+        newPosts.push({
+          id: this.nextPostId,
+          title: `Blog Post ${this.nextPostId}`,
+          content: `Exciting new content in post number ${this.nextPostId}.`
+        });
+        this.nextPostId++;
+      }
+      this.posts = [...this.posts, ...newPosts];
+    },
+    
+    // Debounces function calls
+    debounce(func, wait) {
+      let timeout;
+      return function() {
+        const later = () => {
+          clearTimeout(timeout);
+          func.apply(this, arguments);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
     }
-  </style>
+  },
+
+  mounted() {
+    const section = this.$el;
+    // Adds debounced scroll event listener to load more posts
+    const debouncedLoadMorePosts = this.debounce(() => {
+      if (section.scrollTop + section.clientHeight >= section.scrollHeight) {
+        this.loadMorePosts();
+      }
+    }, 300);
+    section.addEventListener('scroll', debouncedLoadMorePosts);
+  }
+}
+</script>
+
+<template>
+  <div class="max-w-4xl w-full mx-auto bg-white border border-gray-300 shadow-xl h-screen overflow-y-auto" id="scrollableSection">
+    <div class="p-6">
+      <h1 class="text-3xl font-bold text-center mb-6">Our Blog</h1>
+      <div v-for="post in posts" :key="post.id" class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <h2 class="text-2xl font-semibold">{{ post.title }}</h2>
+        <p class="text-gray-600 mt-4">{{ post.content }}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+/* No additional styling needed as Tailwind CSS is being used */
+</style>
+
+  

@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-black/80">
+    <footer class="bg-black/80 z-100">
       <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col items-center space-y-4">
         <!-- Social Media Links -->
         <div class="flex space-x-4">
