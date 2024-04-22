@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-black/80 p-4">
-    <div class="flex justify-between items-center px-4 mx-auto max-w-7xl">
+    <div class="flex justify-between items-center px-2 mx-auto max-w-7xl">
       <!-- Logo / Site Title -->
       <div class="flex items-center space-x-4">
         <a href="#" class="text-xl font-semibold text-white">
@@ -20,7 +20,7 @@
 
       <!-- Primary Navigation -->
       <ul :class="{'hidden': !isMenuOpen, 'flex': isMenuOpen}" class="flex-col md:flex-row md:space-x-4 md:flex md:items-center absolute md:static bg-black/80 md:bg-transparent w-full left-0 md:w-auto">
-        <li><a href="/" class="text-gray-300 hover:text-white block px-4 py-2 md:py-0">Home</a></li>
+  ``        <li><a href="/" class="text-gray-300 hover:text-white block px-4 py-2 md:py-0">Home</a></li>
         <li><a href="/about" class="text-gray-300 hover:text-white block px-4 py-2 md:py-0">About Me</a></li>
         <li><a href="/portfolio" class="text-gray-300 hover:text-white block px-4 py-2 md:py-0">Portfolio</a></li>
         <li><a href="/knowledgebase" class="text-gray-300 hover:text-white block px-4 py-2 md:py-0">Knowledge Base</a></li>
