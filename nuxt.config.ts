@@ -4,5 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
+    "@vite-pwa/nuxt",
   ],
+  pwa: {
+    manifest: {
+      name: 'kbv1',
+      short_name: 'kbv1',
+      lang: 'en',
+    },
+  }
 })
