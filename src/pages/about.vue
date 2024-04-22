@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-black/80 mx-auto px-6 py-10 h-screen">
+    <div class="bg-black/80 mx-auto px-6 py-10 h-screen">
       <h1 class="text-3xl font-semibold text-white">About Me</h1>
       <p class="mt-4 text-white">
         I am dedicated to building beautiful and functional applications.

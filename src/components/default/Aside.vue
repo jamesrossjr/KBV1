@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden md:block bg-black/80 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+  <aside class="hidden md:block bg-black/80 h-full text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
     <!-- Container for menu items -->
     <ul class="space-y-2">
       <li>
