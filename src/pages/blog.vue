@@ -1,5 +1,5 @@
 <template>
-    <div class="newspaper bg-black/80 p-8">
+    <div class="newspaper h-screen bg-black/80 p-8">
       <h1 class="font-serif text-4xl font-bold mb-4">
         Exploring the Hidden Gems of Rome
       </h1>
