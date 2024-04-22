@@ -1,5 +1,5 @@
 <template>
-    <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen w-[800px] overflow-y-auto" id="scrollableSection">
+    <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen max-w-full sm:w-[800px] overflow-y-auto" id="scrollableSection">
       <!-- Content goes here -->
       <p v-for="item in items" :key="item.id" class="text-base font-serif my-2">{{ item.text }}</p>
     </div>

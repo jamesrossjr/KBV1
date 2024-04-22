@@ -1,5 +1,5 @@
 <template>
-    <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen w-[800px] overflow-y-auto" id="scrollableSection">
+    <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen max-w-full sm:w-[800px] overflow-y-auto" id="scrollableSection">
         <div class="text-gray-800 text-center border-b border-gray-800 p-6 md:p-24">
             <h1 class="text-2xl md:text-4xl font-bold">Portfolio/Knowledge Base</h1>
             <p class="text-lg md:text-xl my-4">This web application stores my knowledge.</p>

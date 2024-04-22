@@ -60,7 +60,7 @@ export default {
 </script>
 
 <template>
-  <div class="max-w-4xl w-full mx-auto bg-white border border-gray-300 shadow-xl h-screen overflow-y-auto" id="scrollableSection">
+  <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen max-w-full sm:w-[800px] overflow-y-auto" id="scrollableSection">
     <div class="p-6">
       <h1 class="text-3xl font-bold text-center mb-6">Our Blog</h1>
       <div v-for="post in posts" :key="post.id" class="bg-white rounded-lg shadow-md p-6 mb-6">
