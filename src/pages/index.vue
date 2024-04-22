@@ -1,7 +1,13 @@
 <template>
     <div class="newspaper mx-auto bg-white border border-gray-300 shadow-xl h-screen w-[800px] overflow-y-auto" id="scrollableSection">
-      <!-- Content goes here -->
-      <p v-for="item in items" :key="item.id" class="text-base font-serif my-2">{{ item.text }}</p>
+        <div class="text-gray-800 text-center border-b border-gray-800 p-24">
+            <h1 class="text-4xl font-bold">Portfolio/Knowledge Base</h1>
+            <p class="text-xl my-4">This web application stores my knowledge.</p>
+            <div class="flex justify-center gap-4">
+            <a href="#" class="px-6 py-2 border border-gray-800 rounded hover:bg-white hover:text-black transition-colors">Get Started</a>
+            <a href="https://github.com/" class="px-6 py-2 border border-gray-800 rounded hover:bg-white hover:text-black transition-colors">GitHub</a>
+            </div>
+        </div>
     </div>
   </template>
   
